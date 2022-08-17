@@ -1,0 +1,25 @@
+<form [formGroup]="raceForm" (submit)="submit()">
+  <div>
+    <mat-form-field>
+      <input formControlName="title" name="title" matInput placeholder="Title" />
+      <mat-error>field required</mat-error>
+    </mat-form-field>
+</div>
+<div>
+  <mat-form-field>
+      <mat-select formControlName="poneyId" name="poneyId" placeholder="Poney" multiple>
+        <mat-error>field required</mat-error>
+        <mat-option *ngFor="let element of poney$ | async" 
+          [value]="element.id">
+            {{element.name}}
+          </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div> 
+    <button [disabled]="raceForm.invalid"
+      mat-raised-button color="primary" 
+      type="submit">Create
+  </button>
+  </div>
+</form>

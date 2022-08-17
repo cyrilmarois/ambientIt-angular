@@ -1,0 +1,21 @@
+:host {
+    width: 100%;
+    display: block;
+    
+    .container {
+        display: inline-block;
+        width: 15%;
+        position: relative;
+        left: 0;
+        transition: left 1s linear;
+        margin: 10px 0;
+        border-top: 1px solid grey;
+        border-bottom: 1px solid grey;
+        background-color: indianred;
+    }
+    
+    .container img {
+        width: 100%;
+    }
+}
+

@@ -1,0 +1,9 @@
+<div class="container" 
+  [ngStyle]="{left: poney.distance | percent}"
+  [style.backgroundColor]="'orange'">
+  <!-- (click)="handleClick()" > -->
+  <mat-card>
+    {{poney.name | uppercase}}
+  <img #poneyImg [src]="poney.img" />
+  </mat-card>
+</div>

@@ -1,0 +1,18 @@
+<div>
+  <button mat-button color="primary" (click)="listPoney()">Liste des poney</button>
+  <ul *ngIf="this.isFinish">
+    Winner: 
+    <li *ngFor="let winner of this.winner">
+      {{winner.name}}
+    </li>
+  </ul>
+  <p *ngIf="toto">
+    race {{toto.title}}!
+    <amb-poney *ngFor="let element of poney$ | async | filterPoney:toto.poneyId; let even = even" 
+    (win)="handleWin($event)" 
+    [poney]="element" 
+    ambRainbow
+    [color]="'purple'"
+    [isEven]=even></amb-poney>
+  </p>
+</div>
